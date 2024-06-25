@@ -1,27 +1,14 @@
-import axios from "axios";
+type Score = number | string;
 
-const url = "https://jsonplaceholder.typicode.com/todos/1";
+const myScore: Score = "10";
 
-interface Todo {
-    id: number;
-    title: string;
-    completed: boolean;
-}
+let x: number = JSON.parse("6");
+let srt: string = JSON.parse("sdsds");
 
-axios.get(url).then((response) => {
-    const todo = response.data as Todo;
+let isOdd: boolean;
 
-    const id = todo.id;
-    const title = todo.title;
-    const finished = todo.completed;
-
-    logTodo(id, title, finished);
-});
-
-function logTodo(id: number, title: string, completed: boolean) {
-    console.log(`
-        Todo ID: ${id},
-        Todo title: ${title},
-        Is todo finished: ${completed}
-        `);
+if (x % 2 === 0) {
+    isOdd = false;
+} else {
+    isOdd = true;
 }
